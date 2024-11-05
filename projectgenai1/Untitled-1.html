@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document Chat Interface</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts for typography -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Chat with Your Documents</h1>
+        <p>Upload your documents to begin interacting with them.</p>
+    </header>
+    <main>
+        <section class="upload-section">
+            <form id="upload-form">
+                <div class="file-input">
+                    <label for="document-files">Select Documents</label>
+                    <input type="file" id="document-files" accept=".pdf" multiple required>
+                </div>
+                <button type="button" id="upload-button">Upload Documents</button>
+            </form>
+        </section>
+        <section class="viewer-section">
+            <h2>Document Viewer</h2>
+            <select id="document-select" onchange="displayDocument()">
+                <option value="" disabled selected>Select a document</option>
+            </select>
+            <iframe id="document-viewer" src=""></iframe>
+        </section>
+        <section class="chat-section">
+            <h2>Document Chat</h2>
+            <div id="chat-container">
+                <div id="chat-messages"></div>
+                <form id="chat-form">
+                    <input type="text" id="chat-input" placeholder="Ask a question..." required>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <!-- Link to external JavaScript -->
+    <script src="scripts.js"></script>
+</body>
+</html>

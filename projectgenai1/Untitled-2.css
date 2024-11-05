@@ -1,0 +1,207 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f7f9fc;
+}
+
+header {
+    text-align: center;
+    padding: 60px 20px 40px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    background-color: #ffffff;
+    padding: 30px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.upload-section form,
+.viewer-section,
+.chat-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.file-input {
+    margin-bottom: 20px;
+}
+
+.file-input label {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.file-input input[type="file"] {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+button#upload-button {
+    background-color: #007BFF;
+    color: #ffffff;
+    padding: 14px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    align-self: flex-start;
+}
+
+button#upload-button:hover {
+    background-color: #0056b3;
+}
+
+.viewer-section select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+#document-viewer {
+    width: 100%;
+    height: 600px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.chat-section {
+    display: flex;
+    flex-direction: column;
+}
+
+#chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+#chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #f1f1f1;
+}
+
+.chat-message {
+    margin-bottom: 16px;
+}
+
+.chat-message.user {
+    text-align: right;
+}
+
+.chat-message.bot {
+    text-align: left;
+}
+
+.chat-message p {
+    display: inline-block;
+    max-width: 70%;
+    padding: 12px 16px;
+    border-radius: 20px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.chat-message.user p {
+    background-color: #007BFF;
+    color: #fff;
+    border-top-right-radius: 0;
+}
+
+.chat-message.bot p {
+    background-color: #e6e6e6;
+    color: #333;
+    border-top-left-radius: 0;
+}
+
+#chat-form {
+    display: flex;
+    border-top: 1px solid #ccc;
+}
+
+#chat-input {
+    flex: 1;
+    padding: 16px;
+    border: none;
+    font-size: 1rem;
+}
+
+#chat-input:focus {
+    outline: none;
+}
+
+#chat-form button {
+    background-color: #007BFF;
+    color: #ffffff;
+    padding: 0 24px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#chat-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    #document-viewer {
+        height: 400px;
+    }
+
+    #chat-container {
+        height: 400px;
+    }
+}
