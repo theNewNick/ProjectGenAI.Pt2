@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const formData = new FormData();
         for (const file of files) {
             formData.append('files', file);
-            uploadedFiles[file.name] = URL.createObjectURL(file);
         }
 
         fetch('/upload', {
@@ -28,6 +27,23 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(response => response.json())
         .then(data => {
+            if (data.error) {
+                alert('Error uploading documents: ' + data.error);
+                return;
+            }
+
+            // Clear existing uploadedFiles
+            uploadedFiles = {};
+
+            // Store the document IDs and original names
+            data.files.forEach(fileInfo => {
+                const originalName = fileInfo.original_filename;
+                const storedName = fileInfo.stored_filename;  // This is the document_id
+                uploadedFiles[storedName] = {
+                    originalName: originalName
+                };
+            });
+
             alert('Documents uploaded successfully!');
             populateDocumentSelect();
             displayDocument();
@@ -46,18 +62,18 @@ document.addEventListener('DOMContentLoaded', () => {
         defaultOption.textContent = 'Select a document';
         documentSelect.appendChild(defaultOption);
 
-        for (const fileName in uploadedFiles) {
+        for (const documentId in uploadedFiles) {
             const option = document.createElement('option');
-            option.value = fileName;
-            option.textContent = fileName;
+            option.value = documentId;  // Use stored_filename as the value
+            option.textContent = uploadedFiles[documentId].originalName;
             documentSelect.appendChild(option);
         }
     }
 
     function displayDocument() {
-        const selectedFile = documentSelect.value;
-        if (selectedFile) {
-            documentViewer.src = uploadedFiles[selectedFile];
+        const selectedDocumentId = documentSelect.value;
+        if (selectedDocumentId) {
+            documentViewer.src = `/view_document/${selectedDocumentId}`;
         } else {
             documentViewer.src = '';
         }
@@ -70,20 +86,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const userMessage = chatInput.value.trim();
         if (userMessage === '') return;
 
+        const selectedDocumentId = documentSelect.value;
+        if (!selectedDocumentId) {
+            alert('Please select a document to chat with.');
+            return;
+        }
+
         addChatMessage('user', userMessage);
         chatInput.value = '';
 
-        // Simulate bot response
+        // Send the user message and document ID to the backend
         fetch('/chat', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ message: userMessage, document: documentSelect.value })
+            body: JSON.stringify({ message: userMessage, document_id: selectedDocumentId })
         })
         .then(response => response.json())
         .then(data => {
-            addChatMessage('bot', data.reply);
+            if (data.error) {
+                addChatMessage('bot', 'Error: ' + data.error);
+            } else {
+                addChatMessage('bot', data.answer);
+            }
         })
         .catch(error => {
             console.error('Error:', error);
