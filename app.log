@@ -1,0 +1,76 @@
+[2024-11-20 09:19:51,754] DEBUG in app: Generated embedding for chunk 0
+[2024-11-20 09:19:51,755] DEBUG in app: Generated embedding for chunk 1
+[2024-11-20 09:19:51,755] DEBUG in app: Generated embedding for chunk 2
+[2024-11-20 09:19:51,755] DEBUG in app: Generated embedding for chunk 3
+[2024-11-20 09:19:51,755] DEBUG in app: Generated embedding for chunk 4
+[2024-11-20 09:19:51,756] DEBUG in app: Generated embedding for chunk 5
+[2024-11-20 09:19:51,756] DEBUG in app: Generated embedding for chunk 6
+[2024-11-20 09:19:51,756] DEBUG in app: Generated embedding for chunk 7
+[2024-11-20 09:19:51,756] DEBUG in app: Generated embedding for chunk 8
+[2024-11-20 09:19:51,756] DEBUG in app: Generated embeddings for 9 chunks
+[2024-11-20 09:19:51,756] DEBUG in app: Upserting embeddings to Pinecone
+[2024-11-20 09:19:51,756] DEBUG in app: Entering upsert_embeddings
+[2024-11-20 09:19:52,104] DEBUG in app: Upserted batch 1 to Pinecone
+[2024-11-20 09:19:52,104] DEBUG in app: Upserted total of 9 embeddings
+[2024-11-20 09:19:52,104] DEBUG in app: Cleaning up temporary files
+[2024-11-20 09:19:52,104] DEBUG in app: Deleted /tmp/fea4ce0d-c0a8-4acc-9ed9-db30cc27714e_financial_report_60.pdf
+[2024-11-20 09:19:52,104] DEBUG in app: All files uploaded and processed successfully
+[2024-11-20 09:20:49,835] DEBUG in app: Accessed chat route
+[2024-11-20 09:20:49,835] DEBUG in app: User message: What is their competitive advantage?
+[2024-11-20 09:20:49,835] DEBUG in app: Document ID: fea4ce0d-c0a8-4acc-9ed9-db30cc27714e_financial_report_60.pdf
+[2024-11-20 09:20:49,835] DEBUG in app: Generating query embedding
+[2024-11-20 09:20:49,835] DEBUG in app: Entering generate_query_embedding
+[2024-11-20 09:20:50,299] DEBUG in app: Generated query embedding
+[2024-11-20 09:20:50,300] DEBUG in app: Querying Pinecone for relevant chunks
+[2024-11-20 09:20:50,300] DEBUG in app: Entering query_pinecone
+[2024-11-20 09:20:50,473] DEBUG in app: Received 5 matches from Pinecone
+[2024-11-20 09:20:50,474] DEBUG in app: Getting response from OpenAI
+[2024-11-20 09:20:50,474] DEBUG in app: Entering get_response_from_openai
+[2024-11-20 09:20:52,013] DEBUG in app: Received response from OpenAI
+[2024-11-20 09:20:52,014] DEBUG in app: Assistant response: The competitive advantage of The Walt Disney Company lies in its iconic brands, strong intellectual property portfolio, and global reach across various entertainment segments. Disney's ability to leverage its well-known brands and extensive intellectual properties allows the company to attract a wide audience globally, with a focus on families and fans of Disney's content. Furthermore, Disney's presence in diverse entertainment sectors, including film and television production, theme parks, resorts, and consumer products, positions it as a dominant player in the entertainment industry. This broad portfolio and brand recognition contribute to Disney's competitive edge and market leadership.
+[2024-11-20 10:53:47,613] DEBUG in app: Accessed index route
+[2024-11-20 11:06:46,818] DEBUG in app: Accessed index route
+[2024-11-20 11:18:38,904] DEBUG in app: Accessed index route
+[2024-11-20 12:01:33,371] DEBUG in app: Accessed index route
+[2024-11-20 14:30:12,248] DEBUG in app: Accessed index route
+[2024-11-20 15:10:59,986] DEBUG in app: Accessed index route
+[2024-11-20 16:09:37,408] DEBUG in app: Accessed index route
+[2024-11-20 16:30:45,851] DEBUG in app: Accessed index route
+[2024-11-20 16:34:30,828] DEBUG in app: Accessed index route
+[2024-11-20 16:45:48,016] DEBUG in app: Accessed index route
+[2024-11-20 18:08:47,795] DEBUG in app: Accessed index route
+[2024-11-20 18:44:27,926] DEBUG in app: Accessed index route
+[2024-11-20 19:20:58,232] DEBUG in app: Accessed index route
+[2024-11-20 19:21:41,198] DEBUG in app: Accessed index route
+[2024-11-20 20:20:55,681] DEBUG in app: Accessed index route
+[2024-11-20 20:43:48,626] DEBUG in app: Accessed index route
+[2024-11-20 22:01:44,726] DEBUG in app: Accessed index route
+[2024-11-20 22:35:39,900] DEBUG in app: Accessed index route
+[2024-11-20 23:51:51,494] DEBUG in app: Accessed index route
+[2024-11-21 00:13:40,613] DEBUG in app: Accessed index route
+[2024-11-21 00:20:25,943] DEBUG in app: Accessed index route
+[2024-11-21 00:33:39,407] DEBUG in app: Accessed index route
+[2024-11-21 02:10:21,378] DEBUG in app: Accessed index route
+[2024-11-21 04:08:47,136] DEBUG in app: Accessed index route
+[2024-11-21 04:10:17,890] DEBUG in app: Accessed index route
+[2024-11-21 04:16:36,043] DEBUG in app: Accessed index route
+[2024-11-21 05:04:46,666] DEBUG in app: Accessed index route
+[2024-11-21 05:37:55,838] DEBUG in app: Accessed index route
+[2024-12-09 13:13:28,555] DEBUG in app: AWS Region: us-east-2
+[2024-12-09 13:13:28,564] DEBUG in app: S3 Bucket Name: genai-financial-documents
+[2024-12-09 13:13:28,564] DEBUG in app: OpenAI API Key Provided: True
+[2024-12-09 13:13:28,565] DEBUG in app: Pinecone Environment: us-east-1-aws
+[2024-12-09 13:13:28,565] DEBUG in app: Pinecone Index Name: projectgenai1
+[2024-12-09 13:13:28,565] DEBUG in app: AWS Region: us-east-2
+[2024-12-09 13:13:28,565] DEBUG in app: S3 Bucket Name: genai-financial-documents
+[2024-12-09 13:13:28,565] DEBUG in app: OpenAI API Key Provided: True
+[2024-12-09 13:13:28,565] DEBUG in app: Pinecone Environment: us-east-1-aws
+[2024-12-09 13:13:28,565] DEBUG in app: Pinecone Index Name: projectgenai1
+[2024-12-09 13:13:28,560] DEBUG in app: AWS Region: us-east-2
+[2024-12-09 13:13:28,574] DEBUG in app: S3 Bucket Name: genai-financial-documents
+[2024-12-09 13:13:28,574] DEBUG in app: OpenAI API Key Provided: True
+[2024-12-09 13:13:28,575] DEBUG in app: Pinecone Environment: us-east-1-aws
+[2024-12-09 13:13:28,575] DEBUG in app: Pinecone Index Name: projectgenai1
+[2024-12-09 13:13:29,297] DEBUG in app: NLTK 'punkt' tokenizer found
+[2024-12-09 13:13:29,431] DEBUG in app: NLTK 'punkt' tokenizer found
+[2024-12-09 13:13:29,437] DEBUG in app: NLTK 'punkt' tokenizer found
